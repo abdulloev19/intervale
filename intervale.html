@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Intervale interface</title>
+    <link rel="stylesheet" href="css/intervale.css" />
+  </head>
+  <body>
+    <div class="container" id="abdulloev">
+      <div class="content_header">
+        <div class="header_logo"><h3>Intervale</h3></div>
+        <div class="header_tell"><h3>+992926029988</h3></div>
+      </div>
+      <div class="content_main">
+        <div class="content_sidebar">
+          <nav>
+            <ul>
+              <li :class="{active: reports}" @click="reports = !reports">
+                Отчеты
+              </li>
+              <li
+                id="dropdown"
+                :class="{active: payments}"
+                @click="payments = !payments"
+              >
+                Платежи
+              </li>
+              <div v-show="payments">
+                <li>Lorem</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum dolor.</li>
+              </div>
+              <li
+                id="dropdown"
+                :class="{active: perevod1}"
+                @click="perevod1 = !perevod1"
+              >
+                Переводы с карты на карту
+              </li>
+              <div v-show="perevod1">
+                <li>Lorem</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum dolor.</li>
+              </div>
+              <li
+                id="dropdown"
+                :class="{active: perevod2}"
+                @click="perevod2 = !perevod2"
+              >
+                Переводы с выдачей наличных
+              </li>
+              <div v-show="perevod2">
+                <li>Lorem</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum dolor.</li>
+              </div>
+              <li
+                id="dropdown"
+                :class="{active: perevod3}"
+                @click="perevod3 = !perevod3"
+              >
+                Переводы с карты на счет
+              </li>
+              <div v-show="perevod3">
+                <li>Lorem</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum dolor.</li>
+              </div>
+              <li
+                id="dropdown"
+                :class="{active: perevod4}"
+                @click="perevod4 = !perevod4"
+              >
+                Переводы со счета на карту
+              </li>
+              <div v-show="perevod4">
+                <li>Lorem</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum dolor.</li>
+              </div>
+              <li
+                id="dropdown"
+                :class="{active: alltranslations}"
+                @click="alltranslations = !alltranslations"
+              >
+                Все переводы
+              </li>
+              <div v-show="alltranslations">
+                <li>Рабочий стол</li>
+                <li>Транзакции</li>
+                <li>Статистика</li>
+              </div>
+            </ul>
+          </nav>
+        </div>
+        <div class="content_home">
+          <div v-show="reports" class="content_reports">
+            <div class="content_reports_header_top">
+              <span>/Отчеты</span>
+              <h2>Отчеты</h2>
+            </div>
+            <div class="content_reports_filter">
+              <div
+                id="dropdown"
+                :class="{active: filter}"
+                @click="filter = !filter"
+                class="content_reports_filter_top"
+              >
+                <h3>Фильтр</h3>
+              </div>
+              <div v-show="filter" class="content_reports_filter_main">
+                <div class="filter_top">
+                  <span>Настройки</span>
+                </div>
+                <div class="items">
+                  <div class="item1">
+                    <div>
+                      <span>Период</span>
+                      <p>День</p>
+                    </div>
+                    <div>
+                      <span>Выберите</span>
+                      <p>Текущий</p>
+                    </div>
+                  </div>
+                  <div class="item2">
+                    <div>
+                      <span>Состояние транзакции</span>
+                      <p>Все</p>
+                    </div>
+                    <div>
+                      <span>Портал</span>
+                      <p>Все</p>
+                    </div>
+                    <div>
+                      <span>Тип транзакции</span>
+                      <p>Все</p>
+                    </div>
+                  </div>
+                  <div class="item3">
+                    <div>
+                      <span>Валюта</span>
+                      <p>Все</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter_bottom">
+                  <button>Создать отчет</button>
+                  <button>Сбросить фильтр</button>
+                </div>
+              </div>
+            </div>
+            <div class="listofreports">
+              <div class="listofreports_top">
+                <span>Список отчетов</span>
+                <span>↻ Обновить</span>
+              </div>
+              <div class="listofreports_main">
+                <table>
+                    <thead><tr>
+                        <td>Token</td>
+                        <td>Время создания</td>
+                        <td>Дата начала отчета</td>
+                        <td>Дата завершения отчета</td>
+                        <td>отчет по порталу</td>
+                        <td>тип транзакции</td>
+                        <td>Состояние транзакции</td>
+                        <td>Состояние</td>
+                        <td>действие</td>
+                    </tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>2XOVI94HET</td>
+                            <td>17.11.2022 10:57:11</td>
+                            <td>31.12.2021 22:22:22</td>
+                            <td>31.12.2021 22:22:22</td>
+                            <td>Все</td>
+                            <td>Платежи. Переводы с карты на карту</td>
+                            <td>Успешно</td>
+                            <td><span id="sformirovan">Сформирован</span></td>
+                            <td> <span><img src="img/352275_cloud_download_icon.svg" alt="cloud"></span> <span><?xml version="1.0" ?><svg height="20" viewBox="0 0 48 48" width="20" fill="#ff0000" xmlns="http://www.w3.org/2000/svg"><path d="M12 38c0 2.21 1.79 4 4 4h16c2.21 0 4-1.79 4-4v-24h-24v24zm26-30h-7l-2-2h-10l-2 2h-7v4h28v-4z"/><path d="M0 0h48v48h-48z" fill="none"/></svg> </span></td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              <div class="listofreports_footer">
+                <div class="listofreports_footer_left">
+                    <span>&#8810;</span>
+                    <span>&#8249;</span>
+                    <span>1</span>
+                    <span>&#8250;</span>
+                    <span>&#8811;</span>
+                </div>
+                <div class="listofreports_footer_right">
+                    <div>
+                        <span>Размер страницы</span>
+                        <p>10</p>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/vue.global.prod.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
